@@ -238,8 +238,11 @@ namespace IoT {
      */
     //% block="C2D command $cmd"
     //% draggableParameters="reporter"
-    export function onEvent(cmd:Commands, phandler:() => void) {
-        control.onEvent(CMDEVENTID, cmd, phandler);
+    //     export function onEvent(cmd:Commands, phandler:() => void) {
+    //     control.onEvent(CMDEVENTID, cmd, phandler);
+    export function onEvent(cmd:Commands, p1: number) {
+        handler(Commands.None, P1)
+        //control.onEvent(CMDEVENTID, cmd, phandler);
         control.inBackground(() => {
             while(true) {
                 const cmd = CMD; //get external input here
